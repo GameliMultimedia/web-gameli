@@ -1,9 +1,9 @@
 import { Navbar } from '../components/Navbar' 
 
-const news = () => (
+const about = () => (
   <div>
     <Navbar />
   </div>
 )
 
-export default news
+export default about

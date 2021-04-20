@@ -1,12 +1,12 @@
-import Link from 'next/link'
+
 import { Contentbar } from '../components/Contentbar'
 import { Navbar } from '../components/Navbar' 
 
-const Index = () => (
+const index = () => (
   <div>
     <Navbar />
     <Contentbar/>
   </div>
 )
 
-export default Index
+export default index

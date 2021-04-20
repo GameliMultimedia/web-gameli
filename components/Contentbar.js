@@ -9,20 +9,29 @@ const playerClick = (e) => {
 export const Contentbar = () => {
     return (
         <header>
-            <div class="mx-auto">
-                <div class="grid grid-cols-2">
-                    <div class="flex-shrink-0">
-                        <div class="">
-                            <h1 onClick={playerClick} class="bg-gray-900 bg-opacity-60 py-10 px-80">LISTEN LIVE!</h1>
-                        </div>
+            <div className="flex max-w-full mx-auto">
+                <div className="h-96 w-full relative">
+                    <Image 
+                        src="/stockimage.png" 
+                        layout="fill" 
+                        className="z-0"
+                        objectFit="cover"
+                        objectPosition="center"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 z-50 bg-black h-2/5 w-full bg-opacity-70">
+                        <p className="text-2xl text-center" onClick={playerClick}>LISTEN LIVE!</p>
                     </div>
-                    <div class="flex-shrink-0">
-                        <Image
-                            src="/960x416.png"
-                            width="960"
-                            height="416"
-                            className="cover"
-                        />
+                </div>
+                <div className="h-96 w-full relative">
+                    <Image 
+                        src="/stockimage.png" 
+                        layout="fill" 
+                        className="z-0"
+                        objectFit="cover"
+                        objectPosition="center"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 z-10 bg-black h-2/5 w-full bg-opacity-70">
+                        <p className="text-2xl text-center">DONATE!</p>
                     </div>
                 </div>
             </div>
