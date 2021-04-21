@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 
 const playerClick = (e) => {
-    javascript:void(window.open('/radioplayer', 'Gameli Media Player', 'width=960, height=540'))
+    javascript:void(window.open('/radioplayer', 'Gameli Media Player', 'width=960, height=580'))
 }
 
 export const Contentbar = () => {
@@ -18,8 +18,8 @@ export const Contentbar = () => {
                         objectFit="cover"
                         objectPosition="center"
                     />
-                    <div className="absolute inset-x-0 bottom-0 z-50 bg-black h-2/5 w-full bg-opacity-70">
-                        <p className="text-2xl text-center" onClick={playerClick}>LISTEN LIVE!</p>
+                    <div className="absolute inset-x-0 bottom-0 z-50 bg-black h-1/5 w-full bg-opacity-70">
+                        <p className="text-2xl text-center text-white" onClick={playerClick}>LISTEN LIVE!</p>
                     </div>
                 </div>
                 <div className="h-96 w-full relative">
@@ -30,8 +30,8 @@ export const Contentbar = () => {
                         objectFit="cover"
                         objectPosition="center"
                     />
-                    <div className="absolute inset-x-0 bottom-0 z-10 bg-black h-2/5 w-full bg-opacity-70">
-                        <p className="text-2xl text-center">DONATE!</p>
+                    <div className="absolute inset-x-0 bottom-0 z-10 bg-black h-1/5 w-full bg-opacity-70">
+                        <p className="text-2xl text-center text-white">DONATE!</p>
                     </div>
                 </div>
             </div>
