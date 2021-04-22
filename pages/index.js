@@ -4,8 +4,6 @@ import { Newsbar } from '../components/Newsbar'
 import { Adbar } from '../components/Adbar'
 
 export default function Index({articles, error}) {
-      
-  console.log()
   if (error) {
     return <div>An error occured: {error.message}</div>;
   }
@@ -22,6 +20,8 @@ export default function Index({articles, error}) {
   )
 }
 
+
+// Fetch data from Strapi CMS 
 Index.getInitialProps = async (ctx) => {
   try {
     // Parses the JSON returned by a network request

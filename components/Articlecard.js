@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export const Articlecard = ({src, title, content}) => {
     return (
-            <div className="mt-4 mx-6">
+            <div className="h-408px mt-4 mx-6">
                 <div className="h-40 w-full relative">
                     <Image
                         src={src}
