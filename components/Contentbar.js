@@ -9,10 +9,10 @@ const playerClick = (e) => {
 export const Contentbar = () => {
     return (
         <header>
-            <div className="flex max-w-full mx-auto">
-                <div className="h-96 w-full relative">
+            <div className="flex h-104 max-w-full mx-auto">
+                <div className="w-full relative">
                     <Image 
-                        src="/stockimage.png" 
+                        src="/podcast.png" 
                         layout="fill" 
                         className="z-0"
                         objectFit="cover"
@@ -22,7 +22,7 @@ export const Contentbar = () => {
                         <p className="text-2xl text-center text-white" onClick={playerClick}>LISTEN LIVE!</p>
                     </div>
                 </div>
-                <div className="h-96 w-full relative">
+                <div className="w-full relative">
                     <Image 
                         src="/stockimage.png" 
                         layout="fill" 
