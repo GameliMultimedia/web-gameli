@@ -3,53 +3,33 @@ import { Navbar } from '../components/Navbar'
 import { Newsbar } from '../components/Newsbar' 
 import { Adbar } from '../components/Adbar'
 
-export default function Index({articles, error}) {
-  if (error) {
-    return <div>An error occured: {error.message}</div>;
-  }
-
+export default function Index({articles}) {
   return (
     <div>
       <Navbar />
-      <Contentbar/>
-      <main className="flex w-4/6 mx-auto">
-        <Newsbar articles={articles}/>
-        <Adbar adclass="w-3/12 mx-7 relative h-screen"/>
-      </main>
+      <div className="">
+        <Contentbar/>
+        <main className="flex w-4/6 mx-auto">
+          <Newsbar articles={articles}/>
+          <Adbar adclass="w-3/12 mt-8 mx-7 relative h-full"/>
+        </main>
+      </div> 
     </div>
   )
 }
 
 
-// Fetch data from Strapi CMS 
-Index.getInitialProps = async (ctx) => {
-  try {
-    // Parses the JSON returned by a network request
-    const parseJSON = resp => (resp.json ? resp.json() : resp);
-    // Checks if a network request came back fine, and throws an error if not
-    const checkStatus = resp => {
-      if (resp.status >= 200 && resp.status < 300) {
-        return resp;
-      }
+// Fetch data from Strapi CMS
 
-      return parseJSON(resp).then(resp => {
-        throw resp;
-      });
-    };
+const url = process.env.ARTICLES_BASE_URL
 
-    const headers = {
-      'Content-Type': 'application/json',
-    };
+export const getStaticProps = async () => {
+  const res = await fetch(`${url}`)
+  const articles = await res.json()
 
-    const articles = await fetch('http://localhost:1337/articles', {
-      method: 'GET',
-      headers,
-    })
-      .then(checkStatus)
-      .then(parseJSON);
-
-    return { articles };
-  } catch (error) {
-    return { error };
+  return {
+    props: {
+      articles,
+    },
   }
-};
+}

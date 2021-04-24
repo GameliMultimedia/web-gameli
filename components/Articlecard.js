@@ -1,24 +1,28 @@
+import Link from 'next/link'
 import Image from 'next/image'
 
-export const Articlecard = ({src, title, content}) => {
+export const Articlecard = ({article}) => {
+
     return (
-            <div className="h-408px mt-4 mx-6">
-                <div className="h-40 w-full relative">
+        <Link key={article.Title} href={`/news/${article.id}`}>
+            <a className="my-2 pb-2 mx-2 hover:text-red-600 hover:shadow-lg">
+                <div className="block px-1 pt-1 h-auto w-full relative">
                     <Image
-                        src={src}
-                        layout="fill"
-                        objectFit="cover"
-                        objectPosition="center"
+                        src={"http://localhost:1337".concat(article.Cover.url)}
+                        layout='fill'
+                        object-fit='cover'
                     />
                 </div>
-                <div className="w-full">
-                    <p className="text-xl">{title}</p>
+                <div className="block mx-1 mb-3">
+                    <p className="text-xl font-sans font-bold">{article.Title}</p>
                 </div>
-                <div className="w-full">
-                    <p className="text-md">{content}</p>
+                <div className="block mx-1">
+                    <p className="overflow-hidden text-md font-sans text-black">{article.Summary}</p>
                 </div>
-
-            </div>
+                
+                
+            </a>        
+        </Link>
         )
     }
     

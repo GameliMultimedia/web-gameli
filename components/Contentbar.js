@@ -10,30 +10,32 @@ export const Contentbar = () => {
     return (
         <header>
             <div className="flex h-104 max-w-full mx-auto">
-                <div className="w-full relative">
+                <a className="w-full relative cursor-pointer" onClick={playerClick}>
                     <Image 
                         src="/podcast.png" 
                         layout="fill" 
-                        className="z-0"
+                        className="z-0 transition ease-in-out duration-700 transform hover:scale-105"
                         objectFit="cover"
                         objectPosition="center"
                     />
-                    <div className="absolute inset-x-0 bottom-0 z-50 bg-black h-1/5 w-full bg-opacity-70">
-                        <p className="text-2xl text-center text-white" onClick={playerClick}>LISTEN LIVE!</p>
+                    <div className="absolute px-36 inset-x-0 bottom-0 z-50 h-1/5 w-full bg-opacity-70 ">
+                        <p className="text-3xl font-bold text-right text-white">PROFITEZ EN DIRECT!</p>
                     </div>
-                </div>
-                <div className="w-full relative">
+                </a>
+            <Link href={`/`}>
+                <a className="w-full relative">
                     <Image 
-                        src="/stockimage.png" 
+                        src="/Lomepic.jpg" 
                         layout="fill" 
-                        className="z-0"
+                        className="z-0 transition ease-in-out duration-700 transform hover:scale-105"
                         objectFit="cover"
                         objectPosition="center"
                     />
-                    <div className="absolute inset-x-0 bottom-0 z-10 bg-black h-1/5 w-full bg-opacity-70">
-                        <p className="text-2xl text-center text-white">DONATE!</p>
+                    <div className="absolute px-36 inset-x-0 bottom-0 z-10 h-1/5 w-full bg-opacity-70">
+                        <p className="text-3xl font-bold text-left text-white">FAITES UN DON ET SOUTIEN !</p>
                     </div>
-                </div>
+                </a>
+            </Link>
             </div>
         </header>
     )
